@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
-import {yieldLinesAsync} from "../common";
+import {yieldLinesAsync} from "../util";
 async function main() {
     const elves = [];
     let currentElfCalories = 0;

@@ -10,4 +10,6 @@ export async function* yieldLinesAsync(filePath: string) {
     });
 
     yield* rl;
+
+    rl.close();
 }
