@@ -4,7 +4,7 @@ import {yieldLinesAsync} from "../util";
 async function main() {
     const elves = [];
     let currentElfCalories = 0;
-    for await (const line of yieldLinesAsync(path.join(__dirname, 'input.txt'))) {
+    for await (const line of yieldLinesAsync(__dirname)) {
         if (line === '') {
             elves.push(currentElfCalories);
             currentElfCalories = 0;

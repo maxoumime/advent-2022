@@ -2,7 +2,7 @@ import {yieldLinesAsync} from "../util";
 import * as path from "path";
 
 async function* yieldRucksacks() {
-    for await (const fullRucksack of yieldLinesAsync(path.join(__dirname, 'input.txt'))) {
+    for await (const fullRucksack of yieldLinesAsync(__dirname)) {
         if (fullRucksack.length % 2 !== 0)
             throw new Error(`Don't know how to deal with odd lengths.`);
 
@@ -35,7 +35,7 @@ async function part1Async() {
 }
 
 async function* yieldGroups() {
-    const rucksackGenerator = yieldLinesAsync(path.join(__dirname, 'input.txt'))
+    const rucksackGenerator = yieldLinesAsync(__dirname)
     while (true) {
         const group = [
             (await rucksackGenerator.next()).value,

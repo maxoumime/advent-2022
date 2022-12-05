@@ -20,7 +20,7 @@ function toSection(section: number[]) {
 }
 
 async function* yieldPairs() {
-    for await (const line of yieldLinesAsync(path.join(__dirname, 'input.txt'))) {
+    for await (const line of yieldLinesAsync(__dirname)) {
         const [sectionA, sectionB] = line.split(',');
 
         if (!sectionA || !sectionB) {

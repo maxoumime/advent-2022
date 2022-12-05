@@ -105,7 +105,7 @@ function getMatchPoints(outcome: MatchOutcomeEnum) {
 
 async function part1Async() {
     let totalScore = 0;
-    for await (const line of yieldLinesAsync(path.join(__dirname, 'input.txt'))) {
+    for await (const line of yieldLinesAsync(__dirname)) {
         const [playA, playB] = line.split(' ').map(convertToPlay);
         const result = getMatchResult(playA, playB);
 
@@ -117,7 +117,7 @@ async function part1Async() {
 
 async function part2Async() {
     let totalScore = 0;
-    for await (const line of yieldLinesAsync(path.join(__dirname, 'input.txt'))) {
+    for await (const line of yieldLinesAsync(__dirname)) {
         const [playARaw, matchResultRaw] = line.split(' ');
         const playA = convertToPlay(playARaw);
         const matchResult = convertToMatchResult(matchResultRaw);
