@@ -133,14 +133,7 @@ async function part2Async() {
     return totalScore;
 }
 
-async function main() {
+export async function runDay2() {
     console.log('Total score (A): ', await part1Async());
     console.log('Total score (B): ', await part2Async());
 }
-
-main()
-    .then(() => process.exit(0))
-    .catch(err => {
-        console.error(err);
-        process.exit(1);
-    })

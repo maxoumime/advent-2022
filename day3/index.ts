@@ -62,12 +62,7 @@ async function part2Async() {
     console.log(total);
 }
 
-async function main() {
+export async function runDay3() {
     await part1Async();
     await part2Async();
 }
-
-main().then(() => process.exit(0)).catch(err => {
-    console.error(err);
-    process.exit(1);
-})

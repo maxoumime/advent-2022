@@ -97,12 +97,8 @@ async function part2Async() {
     const topCrates = stacks.map(s => s.at(-1)).join('')
     console.log(topCrates);
 }
-async function main() {
+
+export async function runDay5() {
     await part1Async();
     await part2Async();
 }
-
-main().then(() => process.exit(0)).catch(err => {
-    console.error(err);
-    process.exit(1);
-})
