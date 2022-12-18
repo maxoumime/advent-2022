@@ -98,7 +98,7 @@ async function part2Async() {
     console.log(topCrates);
 }
 
-export async function runDay5() {
+export async function runDay5Async() {
     await part1Async();
     await part2Async();
 }

@@ -133,7 +133,7 @@ async function part2Async() {
     return totalScore;
 }
 
-export async function runDay2() {
+export async function runDay2Async() {
     console.log('Total score (A): ', await part1Async());
     console.log('Total score (B): ', await part2Async());
 }

@@ -76,7 +76,7 @@ async function part2Async() {
     console.log(uselessAssignments);
 }
 
-export async function runDay4() {
+export async function runDay4Async() {
     await part1Async();
     await part2Async();
 }

@@ -1,6 +1,6 @@
 import {yieldLinesAsync} from "../util";
 
-export async function runDay1() {
+export async function runDay1Async() {
     const elves = [];
     let currentElfCalories = 0;
     for await (const line of yieldLinesAsync(__dirname)) {

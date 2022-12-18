@@ -1,28 +1,24 @@
 import {yieldCharactersAsync} from "../util";
 
-function isStartOfPacketDetected(window: ReadonlyArray<string>) {
+function isStartOfPacketDetected(window: ReadonlyArray<string | undefined>) {
     return !window.includes(undefined) && new Set([...window]).size === window.length;
 }
 
 async function findMarkerAsync(numberOfCharacters: number) {
-    const window = new Array(numberOfCharacters).fill(undefined);
+    const window: Array<string | undefined> = new Array(numberOfCharacters).fill(undefined);
     let index = 0;
     for await (const character of yieldCharactersAsync(__dirname)) {
         window[index % numberOfCharacters] = character;
         if (isStartOfPacketDetected(window)) {
-            break;
+            return index;
         }
         index++;
     }
 
-    if (!isStartOfPacketDetected(window)) {
-        throw new Error('No start of packet detected.');
-    }
-
-    return index + 1;
+    throw new Error('No start of packet detected.');
 }
 
-export async function runDay6() {
+export async function runDay6Async() {
     const startOfPacketIndex = await findMarkerAsync(4);
     console.log(`Start of Packet index: ${startOfPacketIndex}`);
     const startOfMessageIndex = await findMarkerAsync(14);

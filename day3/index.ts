@@ -62,7 +62,7 @@ async function part2Async() {
     console.log(total);
 }
 
-export async function runDay3() {
+export async function runDay3Async() {
     await part1Async();
     await part2Async();
 }
