@@ -1,6 +1,6 @@
-import {runDay7Async} from "./day7";
+import {runDay8Async} from "./day8";
 
-runDay7Async().then(() => process.exit(0)).catch(err => {
+runDay8Async().then(() => process.exit(0)).catch(err => {
     console.error(err);
     process.exit(1);
 })

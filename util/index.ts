@@ -31,3 +31,7 @@ export async function* yieldCharactersAsync(fileDir: string, fileName?: string):
         yield buffer.toString();
     }
 }
+
+export function enumValues<Enum>(enumType: Enum): Enum[keyof Enum][] {
+    return Object.values(enumType);
+}
